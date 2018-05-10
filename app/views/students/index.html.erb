@@ -1,2 +1,38 @@
 <h1>Students#index</h1>
-<p>Find me in app/views/students/index.html.erb</p>
+
+<div class="container">
+  <div>
+    <%= render 'search_form' %>
+  </div>
+
+  <div>
+    <table>
+      <tr>
+        <th>
+          name
+        </th>
+        <th>
+          sex
+        </th>
+        <th>
+          age
+        </th>
+        <th>
+          department
+        </th>
+        <th>
+          subjects
+        </th>
+      </tr>
+      <% @students.each do |student| %>
+        <tr>
+          <td><%= student.name %></td>
+          <td><%= student.sex %></td>
+          <td><%= student.age %></td>
+          <td><%= student.department.name %></td>
+          <td><%= student.subjects.map{|subject_id| Subject.find(subject_id.id).name}.join(', ') %></td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
