@@ -1,3 +1,9 @@
-<%= search_form_for(@q, url:search_path) do |f| %>
-<%= f.submit %>
-<% end %>
+
+  <%= search_form_for(@q, url:search_path) do |f| %>
+    <p>
+      <%= f.label :name_cont, 'Name' %>
+      <%= f.search_field :name_cont %>
+      <%= f.submit %>
+    </p>
+    
+  <% end %>

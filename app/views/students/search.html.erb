@@ -26,7 +26,7 @@
             <%= student.department.name %>
           </td>
           <td>
-            <%= student.subjects.map{|subject_id| Subject.find(subject_id).name}.join(', ') %>
+            <%= student.subjects.map{|subject_id| Subject.find(subject_id.id).name}.join(', ') %>
           </td>
 
         </tr>
